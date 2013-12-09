@@ -15,3 +15,8 @@ Installs mutt with the sidebar patch
 ```
 brew install mrtazz/misc/mutt --with-sidebar-patch
 ```
+
+And/or with the TLS cipher selection patch
+```
+brew install mrtazz/misc/mutt --with-tls-ciphers-patch
+```

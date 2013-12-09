@@ -24,9 +24,11 @@ class Mutt < Formula
   option "with-pgp-verbose-mime-patch", "Apply PGP verbose mime patch"
   option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypti-hook patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
+  option "with-tls-ciphers-patch", "Apply configure TLS ciphers patch"
 
   depends_on 'tokyo-cabinet'
   depends_on 's-lang' => :optional
+  depends_on 'openssl' if build.with? "tls-ciphers-patch"
 
   def patches
     urls = [
@@ -42,6 +44,7 @@ class Mutt < Formula
       ['with-pgp-combined-crypt-hook-patch',
           'http://localhost.lu/mutt/patches/patch-1.5.22.sc.crypt-combined.1'],
       ['with-confirm-attachment-patch', 'https://gist.github.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch'],
+      ['with-tls-ciphers-patch', 'http://dev.mutt.org/trac/raw-attachment/ticket/3167/mutt-ssl-ciphers-patch.diff' ]
     ]
 
     if build.with? "ignore-thread-patch" and build.with? "sidebar-patch"
