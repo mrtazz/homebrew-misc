@@ -20,3 +20,10 @@ And/or with the TLS cipher selection patch
 ```
 brew install mrtazz/misc/mutt --with-tls-ciphers-patch
 ```
+
+### muttprint
+Installs muttprint package mess
+```
+brew install mrtazz/misc/muttprint
+```
+
