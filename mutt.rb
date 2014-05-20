@@ -2,7 +2,7 @@ require 'formula'
 
 class Mutt < Formula
   homepage 'http://www.mutt.org/'
-  url 'ftp://ftp.mutt.org/mutt/mutt-1.5.23.tar.gz'
+  url 'ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-1.5.23.tar.gz'
   sha1 '8ac821d8b1e25504a31bf5fda9c08d93a4acc862'
 
   head do
