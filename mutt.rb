@@ -27,10 +27,11 @@ class Mutt < Formula
   option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypti-hook patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
   option "with-tls-ciphers-patch", "Apply configure TLS ciphers patch"
+  option 'with-hash-fingerprints-patch', 'Apply show more hashes on certs patch'
 
   depends_on 'tokyo-cabinet'
   depends_on 's-lang' => :optional
-  depends_on 'openssl' if build.with? "tls-ciphers-patch"
+  depends_on 'openssl' if build.with? "tls-ciphers-patch" or build.with? 'hash-fingerprints-patch'
 
   def patches
     urls = [
@@ -46,7 +47,8 @@ class Mutt < Formula
       ['with-pgp-combined-crypt-hook-patch',
           'http://localhost.lu/mutt/patches/patch-1.5.22.sc.crypt-combined.1'],
       ['with-confirm-attachment-patch', 'https://gist.github.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch'],
-      ['with-tls-ciphers-patch', 'http://dev.mutt.org/trac/raw-attachment/ticket/3167/mutt-ssl-ciphers-patch.diff' ]
+      ['with-tls-ciphers-patch', 'http://dev.mutt.org/trac/raw-attachment/ticket/3167/mutt-ssl-ciphers-patch.diff' ],
+      ['with-hash-fingerprints-patch', 'https://gist.githubusercontent.com/barn/a4ac8eda9592e1dd8b07/raw/a5e136e70ff6f00b32a5475799dd927e1c0b1b4e/mutt-hash-fingerprints-patch.diff']
     ]
 
     if build.with? "ignore-thread-patch" and build.with? "sidebar-patch"
