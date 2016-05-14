@@ -11,4 +11,4 @@ brew-tap:
 	brew tap mrtazz/misc
 
 %:
-	brew install $@
+	brew install mrtazz/misc/$@
