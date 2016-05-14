@@ -1,4 +1,4 @@
-# homebrew-misc
+# homebrew-misc [![Build Status](https://travis-ci.org/mrtazz/homebrew-misc.svg?branch=master)](https://travis-ci.org/mrtazz/homebrew-misc)
 
 ## Overview
 This is just a collection of formula I have adapted for my needs.
